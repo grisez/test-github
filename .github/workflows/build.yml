@@ -68,12 +68,14 @@ jobs:
     needs: [build]
     runs-on: ubuntu-latest
     steps:
-        - uses: actions/checkout@v2
-        - name: Set up settings.xml for GitHub Packages
-          uses: actions/setup-java@v2
+        - uses: actions/checkout@v3
           with:
-              distribution: 'adopt'
-              java-version: 11
+            fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+        - name: Set up JDK 17
+          uses: actions/setup-java@v3
+          with:
+            java-version: 17
+            distribution: 'zulu' # Alternative distribution options are available
         - name: Publish to GitHub Packages
           run: mvn --batch-mode deploy -DskipTests
           env:
