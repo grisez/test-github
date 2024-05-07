@@ -39,5 +39,11 @@
 			</plugin>
 		</plugins>
 	</build>
+    	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<url>https://maven.pkg.github.com/school-by-hiit/portail-suivi-formation-2022</url>
+		</repository>
+	</distributionManagement>
 
 </project>
