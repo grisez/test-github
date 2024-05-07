@@ -1,10 +1,13 @@
-@WebService(targetNamespace="http://spoonless.github.io/ws/hello", serviceName="HelloService")
-@SOAPBinding(parameterStyle = SOAPBinding.ParameterStyle.BARE)
-public class HelloService {
-  @WebMethod
-  @WebResult(name = "helloMessage", targetNamespace = "http://spoonless.github.io/ws/hello")
-  public String sayHello(
-      @WebParam(name = "who", targetNamespace="http://spoonless.github.io/ws/hello") String name) {
-    return "Hello " + name;
-  }
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Hello {
+
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+	}
+
 }
